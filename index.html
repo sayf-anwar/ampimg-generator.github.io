@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AMP Image Generator</title>
+
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+        <title>Free AMP-IMG Converter for AMP Web and Blogger</title>
+<meta name="description" content="Free tool for convert tag img to amp-img easier, especially for AMP Blogger Template users. AMP-IMG generator is free tool made by amp-blogger.com">
+<meta name="keywords" content="amp-img, amp generator, amp-img converter">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <link rel="stylesheet" href="machine.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+            <h1>AMP Image Generator</h1>
+            <p>Create <code>amp-img</code> tag from image url quickly</p>
+
+
+            <p>Tools ini hanya saya gunakan untuk memudahkan dalam membuat tag amp-img pada gambar Blogspot
+            </p>
+        </div>
+        <div class="col-md-8">
+            <!-- Future Development, mybe ads here -->
+        </div>
+        </div>
+        </div>
+
+        <div class="container" id="app">
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                    <div class="panel panel-default" style="margin-top:2vh">
+                        <div class="panel-body">
+
+                    <div class="form-group">
+                        <label>Image URL*</label>
+                        <input class="form-control" v-on:keyup="getImageData()" v-model="src" type="text" placeholder="http://example.com/image.jpg" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Layout</label>
+                        <select class="form-control" v-model="layout">
+                            <option>nodisplay</option>
+                            <option>fixed</option>
+                            <option>responsive</option>
+                            <option>fixed-height</option>
+                            <option>fill</option>
+                            <option>container</option>
+                            <option>flex-item</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alt text</label>
+                        <input class="form-control" v-model="alt" type="text" placeholder="alternative text" />
+                    </div>
+
+                    <div class="form-group">
+                        <textarea onclick="this.select()" class="form-control" rows="8" style="font-family:monospace">
+&lt;div class=&quot;img-width-600 img-center&quot;&gt;&lt;div class=&quot;caption-gambar&quot;&gt;&lt;amp-img
+    width="{{ width }}"
+    height="{{ height }}"
+    alt="{{ alt }}"
+    src="{{ src }}"
+    layout="{{ layout }}"&gt;
+&lt;/amp-img&gt;&lt;span&gt;@mbois&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</textarea>
+                    </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+            <p>Made with <i class="glyphicon glyphicon-heart"></i> by <a href="http://mbois.co/" rel="dofollow">MBOIS.co</a> x <a href="http://petanikode.com/" rel="dofollow">Petani Kode</a></p>
+            </div>
+            </div>
+            </div>
+        </footer>
+
+
+        <script src="assets/js/amp-img-generator.js"></script>
+    </body>
+</html>
